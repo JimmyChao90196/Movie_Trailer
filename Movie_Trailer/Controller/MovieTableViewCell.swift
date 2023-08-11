@@ -8,10 +8,12 @@
 import UIKit
 import Foundation
 
+
+
 class MovieTableViewCell: UITableViewCell {
     
     var toggle = true
-    
+   
     
     @IBOutlet var likeButtonView: UIButton!
     @IBOutlet var stars: UILabel!
@@ -40,4 +42,10 @@ class MovieTableViewCell: UITableViewCell {
         
         sender.setImage(heart, for: .normal)
     }
+}
+
+
+
+extension UITableViewCell {
+    static var reuseIdentifier: String { "\(Self.self)" }
 }

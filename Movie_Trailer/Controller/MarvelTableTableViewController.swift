@@ -56,7 +56,13 @@ class MarvelTableTableViewController: UITableViewController{
    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "\(MovieTableViewCell.self)", for: indexPath) as! MovieTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.reuseIdentifier , for: indexPath) as? MovieTableViewCell else {
+            fatalError("Unable to dequeue MovieTableViewCell")
+        }
+
+        
+        
+        
         
         var movie:film
         
